@@ -12,14 +12,14 @@
          <li class="nav-item">
           <router-link class="nav-link" to="/" active>Convert</router-link>
         </li> 
-        <!--  <li class="nav-item">
+         <li class="nav-item">
           <router-link class="nav-link" to="/account">Account</router-link>
+        </li> 
+        <!-- <li class="nav-item">
+          <router-link class="nav-link" to="/pricing">Pricing</router-link>
         </li>  -->
         <li class="nav-item">
-          <router-link class="nav-link" to="/pricing">Pricing</router-link>
-        </li> 
-        <li class="nav-item">
-           <router-link class="nav-link" to="/about">About</router-link>
+           <router-link class="nav-link" to="/about">Help</router-link>
           <!-- <a class="nav-link" href="#">About</a>-->
         </li> 
       </ul>

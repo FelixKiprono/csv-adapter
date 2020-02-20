@@ -4,7 +4,7 @@
 <div class="container">
   <div class="card border-0 shadow my-5">
     <div class="card-body p-5">
-       <i>Nb: Please convert your file to csv first before uploading</i>
+       <b-alert show variant="warning">Nb: Please convert your file to csv first before uploading</b-alert>
 <div class="dropfile">
  <input 
       type="file"
@@ -18,7 +18,7 @@
 
 <div class="row">
 <div class="col-sm-4">
-  Convert To 
+  Target Type 
 <b-form-select placeholder="Target type" v-model="selected" :options="options">
     -- Please select an target type --
 </b-form-select>
@@ -26,16 +26,32 @@
    <div class="col-sm-4">
      Your table name 
       <b-form-input v-model="tablename" placeholder="tablename"></b-form-input>
-    <div class="mt-2">Table: <b>{{ tablename }}</b></div>
+      
+    <!-- <div class="mt-2">Defined table <b>{{ tablename }}</b></div> -->
   </div>
   <div class="col-sm-4">
-   Your Columns (add , after the name)
+   <!-- Your Columns (add , after the name)
       <b-form-input v-model="columns" placeholder="target table column names"></b-form-input>
-    <div class="mt-2">Columns: <b>{{ columns }}</b></div>
+    <div class="mt-2"><b>{{ columns }}</b></div>-->
+     
+
+   Enter column names and press enter
+    <b-form-tags 
+    input-id="tags-basic" 
+    separator=" ,;" 
+    placeholder="add column name" 
+    v-model="value" 
+    class="mb-3"
+    tag-variant="primary"
+    ></b-form-tags>
+
   </div>
 
     <div class="col-sm-4">
-      <b-button size="md" @click="uploadFile()">Convert File</b-button>
+      <b-button 
+      size="md"       
+    variant="primary"
+      @click="uploadFile()">Convert File</b-button>
   </div>
  
 </div>
@@ -45,14 +61,14 @@
     id="textarea-rows"
     placeholder="Converted output"
     rows="8"
-    v-model="convertedData"
+    style="font-family:monospace;"
+    v-model="convertedData"    
   ></b-form-textarea>
 
   <div class="mt-3">
     <b-button-group size="sm">
       <b-button>Copy</b-button>
-      <b-button>Cut</b-button>
-      <b-button>Format</b-button>
+      <b-button @click="clear()">Clear</b-button>
     </b-button-group>
   </div>
 </div>
@@ -79,15 +95,21 @@ export default {
     return {
         file:'',
         selected:'SQL',
-        options:['SQL','MySQL','MicrosoftSQLServer','PostgreSQL','SQlite','MSAccess','MongoDB','JSON'],
+        options:['SQL','MySQL','MsSQL','PostgreSQL','SQLite'],
         convertedData:'',
         name:'SQL and MySQL',
         tablename:'',
-        columns:''
+        columns:'',
+        value: []
     }
   },
   methods:
   {
+    clear()
+    {
+      this.convertedData='';
+
+    },
       onChange($event)
       {
         var myfile = $event.target.files[0];        
@@ -104,6 +126,27 @@ export default {
         }
         
         //check if they have supplied table name
+
+        var column='';
+        if(this.value!=null)
+        {
+          var i=0;
+          this.value.forEach((value)=>
+          {
+            i++;
+            column = column + value;
+            if(i<this.value.length)
+            {
+               column +=",";          
+
+            }
+          });      
+        }
+        else
+        {
+          column='';
+        }
+        this.columns = column;
 
        let formData = new FormData();
        formData.append('file', this.file);
