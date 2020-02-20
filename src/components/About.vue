@@ -5,61 +5,75 @@
 
 <!-- Page Content -->
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-header bg-default text-black"><i class="fa fa-envelope"></i> Message us.
-                </div>
-                <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea class="form-control" id="message" rows="5" required></textarea>
-                        </div>
-                        <div class="mx-auto">
-                        <button type="submit" class="btn btn-primary text-right">Send</button></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-4">
-            <div class="card bg-light mb-3">
-                <div class="card-header bg-default text-black"><i class="fa fa-phone"></i> Contacts</div>
-                <div class="card-body">
-                    <p>You can also reach us via these channels</p>
-                    <p>Facebook  <a href="">csvadapter</a></p>
-                    <p>Twitter  <a href="">@csvadapter</a></p>
-                    <p>Email  <a href="">csvadapter@gmail.com</a></p>
-                   <!--  <p>Skype  <a href=""> @csvadapter</a></p>
-                    <p>Zoom  <a href=""> csvadapter</a></p>
- -->
-                </div>
-
-            </div>
-        </div>
+                      
+<b-list-group>
+  <b-list-group-item href="#" active class="flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">How to use csv converter</h5>
+    
     </div>
+
+    <small></small>
+  </b-list-group-item>
+
+  <b-list-group-item href="#" class="flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"></h5>
+      <small class="text-muted"></small>
+    </div>
+
+<ol>
+    <li>
+    <p class="mb-1">
+      Convert/Export you excel file to csv from your source with any software that manages spreadsheets, 
+      or if you have an existing csv file skip this part. 
+      
+    </p>
+       <small>Ensure that your file is .csv or you will get an error</small>
+  
+    
+    </li>
+     <li>
+    <p class="mb-1">
+      On csvadapter website click convert then import the CSV file on the drop file area <br>
+     </p>
+    </li>
+     <li>
+    <p class="mb-1">
+      You MUST choose the target query before proceeding the default is standard SQL, if you leave it the system 
+      will return standard SQL query.
+    </p>
+    </li>
+     <li>
+    <p class="mb-1">
+      You can choose to specify the table name and target columns or leave it blank the system will use header column names 
+    </p>
+    </li>
+      <li>
+    <p class="mb-1">
+      Click convert and boom you have your desired query  now copy and run on your favorite database.
+    </p>
+    </li>
+
+</ol>
+
+    <small class="text-muted">By sergei(csvadapter)</small>
+  </b-list-group-item>
+
+  
+</b-list-group>
 </div>
 <!-- footer Content -->
-<Footer></Footer>
-
 </div>
+
 </template>
 <script>
 
-import Footer from './Footer.vue'
+//import Footer from './Footer.vue'
 export default {
   name: 'about',
   components: {
-    Footer  
+  //  Footer  
 },
   data()
   {

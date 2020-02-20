@@ -12,9 +12,9 @@
          <li class="nav-item">
           <router-link class="nav-link" to="/" active>Convert</router-link>
         </li> 
-         <li class="nav-item">
+         <!-- <li class="nav-item">
           <router-link class="nav-link" to="/account">Account</router-link>
-        </li> 
+        </li>  -->
         <!-- <li class="nav-item">
           <router-link class="nav-link" to="/pricing">Pricing</router-link>
         </li>  -->
