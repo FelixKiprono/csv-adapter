@@ -93,6 +93,7 @@ export default {
   data()
   {
     return {
+        http:'https://api.csvadapter.com/',
         file:'',
         selected:'SQL',
         options:['SQL','MySQL','MsSQL','PostgreSQL','SQLite'],
@@ -155,7 +156,7 @@ export default {
        formData.append('columns',this.columns);
     
     
-    this.$http.post('http://localhost/Proton/index.php', formData,
+    this.$http.post(this.http, formData,
       
       // this.$http.post('../php/index.php', formData,
        {
