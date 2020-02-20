@@ -5,23 +5,18 @@
 
 <!-- Page Content -->
 <div class="container">
-                      
-<b-list-group>
-  <b-list-group-item href="#" active class="flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">How to use csv converter</h5>
-    
-    </div>
+  
+  <h1 class="mb-1">What is Csv adapter ?</h1>
 
-    <small></small>
-  </b-list-group-item>
+ <p class="mb-1">
+     CSV adapter is a comma delimited conversion tool, it converts csv files to desired format
+</p>
+ <h1 class="mb-1">Supported files</h1>
 
-  <b-list-group-item href="#" class="flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1"></h5>
-      <small class="text-muted"></small>
-    </div>
+ <p class="mb-1">
+     CSV adapter currently only supports <b>csv</b> file format</p>
 
+<h1 class="mb-1">Using Csv adapter</h1>
 <ol>
     <li>
     <p class="mb-1">
@@ -29,13 +24,12 @@
       or if you have an existing csv file skip this part. 
       
     </p>
-       <small>Ensure that your file is .csv or you will get an error</small>
-  
+      Ensure that your file is .csv or you will get an error 
     
     </li>
      <li>
     <p class="mb-1">
-      On csvadapter website click convert then import the CSV file on the drop file area <br>
+      On csvadapter website click on the drop file area and choose your csv file from your computer files.<br>
      </p>
     </li>
      <li>
@@ -57,14 +51,10 @@
 
 </ol>
 
-    <small class="text-muted">By sergei(csvadapter)</small>
-  </b-list-group-item>
-
-  
-</b-list-group>
+   
+</div>
 </div>
 <!-- footer Content -->
-</div>
 
 </template>
 <script>

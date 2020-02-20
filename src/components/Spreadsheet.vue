@@ -42,7 +42,6 @@
     placeholder="add column name" 
     v-model="value" 
     class="mb-3"
-    tag-variant="primary"
     ></b-form-tags>
 
   </div>
@@ -186,11 +185,12 @@ export default {
 <style> 
 /* Set a background image by replacing the URL below */
 body {
- /* background: url('https://freecoursesite.us/wp-content/uploads/2019/08/Mastering-Essential-Excel-in-3-HOURS-Course-Learn-Excel.jpg') no-repeat center center fixed;*/
+  /*background: url('https://www.excel-easy.com/basics/images/worksheets/sheet1.png');*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  background-color: aliceblue;
 }
 .dropfile{
     background: whitesmoke;

@@ -26,6 +26,8 @@ axios.defaults.headers.common['Access-Control-Allow-Headers'] ='Content-type,Acc
 
 Vue.prototype.$http = axios;
 
+import VueAnalytics from 'vue-analytics';
+
 // Configuration VueAnalytics
 
 Vue.use(VueRouter);
@@ -36,7 +38,7 @@ Vue.config.productionTip = false
 const approutes = 
 [
   {path:'/',component:Spreadsheet},
-  {path:'/about',component:About},
+  {path:'/help',component:About},
   {path:'/pricing',component:Pricing},
   {path:'/account',component:Account}  
 ];
@@ -47,7 +49,10 @@ const router = new VueRouter(
   }
 );
 
-
+Vue.use(VueAnalytics, {
+  id: 'UA-158799537-1',
+  router
+});
 
 new Vue({
   

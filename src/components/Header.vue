@@ -1,6 +1,6 @@
 <template>
 <div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5  shadow">
   <div class="container">
         <router-link class="navbar-brand" to="/">Csv adapter</router-link>
      
@@ -19,7 +19,7 @@
           <router-link class="nav-link" to="/pricing">Pricing</router-link>
         </li>  -->
         <li class="nav-item">
-           <router-link class="nav-link" to="/about">Help</router-link>
+           <router-link class="nav-link" to="/help">Help</router-link>
           <!-- <a class="nav-link" href="#">About</a>-->
         </li> 
       </ul>
