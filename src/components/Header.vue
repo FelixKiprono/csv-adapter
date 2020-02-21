@@ -1,16 +1,28 @@
 <template>
 <div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5  shadow">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary static-top mb-5  ">
+ 
   <div class="container">
-        <router-link class="navbar-brand" to="/">Csv adapter</router-link>
+      
+        <h2>
+           <a class="navbar-brand" href="#">
+        <img src="../assets/icons8-export-csv-24.png" alt="Logo">
+       
+          <font color="white"> Csv adapter</font> 
+          </a>
+          </h2>
      
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto" stye="text-color=white">
+
+        <!-- <li class="nav-item">
+          <router-link class="nav-link" to="/" active>Home</router-link>
+        </li>  -->
          <li class="nav-item">
-          <router-link class="nav-link" to="/" active>Convert</router-link>
+          <router-link class="nav-link" to="/convert" active><font color="white">Convert</font></router-link>
         </li> 
          <!-- <li class="nav-item">
           <router-link class="nav-link" to="/account">Account</router-link>
@@ -19,7 +31,7 @@
           <router-link class="nav-link" to="/pricing">Pricing</router-link>
         </li>  -->
         <li class="nav-item">
-           <router-link class="nav-link" to="/help">Help</router-link>
+           <router-link class="nav-link" to="/help"><font color="white">Help</font></router-link>
           <!-- <a class="nav-link" href="#">About</a>-->
         </li> 
       </ul>

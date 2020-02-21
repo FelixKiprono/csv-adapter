@@ -2,8 +2,8 @@
 <div>
 <!-- Page Content -->
 <div class="container">
-  <div class="card border-0 shadow my-5">
-    <div class="card-body p-5">
+  <!-- <div class="card border-0 shadow my-5">
+    <div class="card-body p-5"> -->
        <b-alert show variant="warning">Nb: Please convert your file to csv first before uploading</b-alert>
 <div class="dropfile">
  <input 
@@ -72,9 +72,10 @@
   </div>
 </div>
 
-</div>
-</div>
-</div>
+  </div>
+
+<!-- </div>
+</div>   -->
 
 <Footer></Footer>
 </div>
@@ -190,7 +191,7 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  background-color: aliceblue;
+  background-color: white;
 }
 .dropfile{
     background: whitesmoke;
