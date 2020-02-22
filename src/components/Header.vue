@@ -24,6 +24,29 @@
          <li class="nav-item">
           <router-link class="nav-link" to="/" active><font color="white">Convert</font></router-link>
         </li> 
+         <li class="nav-item">
+           
+         <b-link class="nav-link" v-b-modal.modal-submitform active><font color="white">Feedback</font></b-link>
+    <b-modal id="modal-submitform"  ref="modal-submitform" hide-footer centered title="Your Feedback">
+   
+    <h3 class="font-weight-light">{{msg}} </h3> 
+     
+    <p class="my-4">
+        <b-form-input id="input-phrase"  v-model="name"   placeholder="Your name or email"></b-form-input>
+    </p>
+
+     <p class="my-4">
+           <b-form-textarea class="form-control" rows="3" id="feedback" v-model="feedback" no-resize></b-form-textarea>
+       
+  
+     </p>
+
+   
+
+     <b-button block variant="primary" @click="submitfeedback()">Submit</b-button>
+    
+</b-modal>
+  </li> 
          <!-- <li class="nav-item">
           <router-link class="nav-link" to="/account">Account</router-link>
         </li>  -->
@@ -51,9 +74,44 @@ export default {
   data()
   {
     return {
+      http:'https://api.csvadapter.com/csvadapter-api/feedback.php',
+  // http:'http://localhost/csvadapter-api/feedback.php',      
+    msg:'',
+    feedback:'',
+    name:''
        
     }
   },
+  methods: {
+    submitfeedback: function() 
+    {
+      if(this.name.length>0 && this.feedback.length>0)
+      {
+        const formData = new FormData();
+formData.append('name', this.name,);
+formData.append('feedback', this.feedback);
+
+  
+       this.$http
+        .post(this.http,formData)
+        .then(() => 
+        {
+          this.msg="Successfully submited feedback";
+         // this.name='';
+         // this.feedback='';
+         // this.msg='';
+        });        
+
+      }
+      else
+      {
+        alert('Please provide feedback and your name or email');
+    
+      }
+
+
+    }
+    }
   
 
 }

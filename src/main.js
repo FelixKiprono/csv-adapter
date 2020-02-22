@@ -14,8 +14,14 @@ import Spreadsheet from './components/Spreadsheet.vue'
 import Pricing from './components/Pricing.vue'
 import Account from './components/Account.vue'
 import About from './components/About'
-//import Homepage from './components/Homepage.vue'
 
+import VueMeta from 'vue-meta'
+
+
+Vue.use(VueMeta)
+//import Homepage from './components/Homepage.vue'
+import VueClipboards from 'vue-clipboards'
+Vue.use(VueClipboards);
 
 Vue.use(axios)
 

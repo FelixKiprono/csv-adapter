@@ -66,7 +66,7 @@
 
   <div class="mt-3">
     <b-button-group size="sm">
-      <b-button>Copy</b-button>
+      <b-button @success="handleSuccess"  @error="handleError" v-clipboard="convertedData">Copy</b-button>
       <b-button @click="clear()">Clear</b-button>
     </b-button-group>
   </div>
@@ -93,7 +93,8 @@ export default {
   data()
   {
     return {
-        http:'https://api.csvadapter.com/',
+       //  http:'http://localhost/csvadapter-api/index.php',
+       http:'https://api.csvadapter.com/index.php',
         file:'',
         selected:'SQL',
         options:['SQL','MySQL','MsSQL','PostgreSQL','SQLite'],
@@ -101,11 +102,19 @@ export default {
         name:'SQL and MySQL',
         tablename:'',
         columns:'',
-        value: []
+        value: [],
+        query:''
     }
   },
   methods:
   {
+    handleSuccess() 
+    {
+      alert("Successfully Copied Your Query!");
+    },
+    handleError(e) {
+            window.console.log(e);
+        },
     clear()
     {
       this.convertedData='';
