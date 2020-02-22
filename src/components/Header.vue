@@ -26,7 +26,8 @@
         </li> 
          <li class="nav-item">
            
-         <b-link class="nav-link" v-b-modal.modal-submitform active><font color="white">Feedback</font></b-link>
+         <!-- <b-link class="nav-link" v-b-modal.modal-submitform active><font color="white">Feedback</font></b-link>
+   -->
     <b-modal id="modal-submitform"  ref="modal-submitform" hide-footer centered title="Your Feedback">
    
     <h3 class="font-weight-light">{{msg}} </h3> 
