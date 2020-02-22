@@ -48,6 +48,7 @@ const approutes =
 
 const router = new VueRouter(
   {
+    mode: 'history',
     routes:approutes
   }
 );
