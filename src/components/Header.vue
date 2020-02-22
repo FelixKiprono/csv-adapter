@@ -1,6 +1,6 @@
 <template>
 <div>
-  <nav class="navbar navbar-expand-lg navbar-light bg-success static-top mb-5  ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary static-top mb-5  ">
  
   <div class="container">
       
@@ -8,7 +8,7 @@
            <a class="navbar-brand" href="#">
         <img src="../assets/icons8-export-csv-24.png" alt="Logo">
        
-          <font color="white"> Csv adapter</font> 
+          <font color="white"> Csv Adapter</font> 
           </a>
           </h2>
      
@@ -22,7 +22,7 @@
           <router-link class="nav-link" to="/" active>Home</router-link>
         </li>  -->
          <li class="nav-item">
-          <router-link class="nav-link" to="/convert" active><font color="white">Convert</font></router-link>
+          <router-link class="nav-link" to="/" active><font color="white">Convert</font></router-link>
         </li> 
          <!-- <li class="nav-item">
           <router-link class="nav-link" to="/account">Account</router-link>

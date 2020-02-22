@@ -14,7 +14,7 @@ import Spreadsheet from './components/Spreadsheet.vue'
 import Pricing from './components/Pricing.vue'
 import Account from './components/Account.vue'
 import About from './components/About'
-import Homepage from './components/Homepage.vue'
+//import Homepage from './components/Homepage.vue'
 
 
 Vue.use(axios)
@@ -39,8 +39,8 @@ Vue.use(BootstrapVue)
 Vue.config.productionTip = false 
 const approutes = 
 [
-  {path:'/',component:Homepage},
-  {path:'/convert',component:Spreadsheet},
+ // {path:'/',component:Homepage},
+  {path:'/',component:Spreadsheet},
   {path:'/help',component:About},
   {path:'/pricing',component:Pricing},
   {path:'/account',component:Account}  
