@@ -14,7 +14,6 @@ import Spreadsheet from './components/Spreadsheet.vue'
 import Pricing from './components/Pricing.vue'
 import Account from './components/Account.vue'
 import About from './components/About'
-
 import VueMeta from 'vue-meta'
 
 

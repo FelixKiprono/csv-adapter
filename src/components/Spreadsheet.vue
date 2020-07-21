@@ -12,7 +12,7 @@
       ref="file"
       @change="onChange">
      
-<h2 class="inputtext">Drop csv file here</h2>
+<h2 class="inputtext">{{filename}}</h2>
 
 </div>
 
@@ -22,38 +22,70 @@
 <b-form-select placeholder="Target type" v-model="selected" :options="options">
     -- Please select an target type --
 </b-form-select>
+</div>
+<div class="col-sm-4">
+  Query 
+<b-form-select placeholder="Target type" @change="onFormatChange" v-model="selectedquerytype" :options="querytype">
+    -- Please select an Query type --
+</b-form-select>
   </div>
    <div class="col-sm-4">
-     Your table name 
+     Your table name  
+    
+
       <b-form-input v-model="tablename" placeholder="tablename"></b-form-input>
       
     <!-- <div class="mt-2">Defined table <b>{{ tablename }}</b></div> -->
   </div>
-  <div class="col-sm-4">
+   <div class="col-sm-12" v-show="FormatVisible">
+   
+  <br>
+
+  Format for none insert queries
+    <b-form-input 
+    placeholder="query format e.g DELETE FROM table WHERE {id} = {value}" 
+    v-model="querytemplate"
+    class="mb-3"
+    ></b-form-input>
+
+  </div>
+  <div class="col-sm-12">
    <!-- Your Columns (add , after the name)
       <b-form-input v-model="columns" placeholder="target table column names"></b-form-input>
     <div class="mt-2"><b>{{ columns }}</b></div>-->
-     
+  <br>
 
-   Enter column names and press enter
+  <i>(optional)</i> your target column names as per your table and press enter
     <b-form-tags 
     input-id="tags-basic" 
     separator=" ,;" 
-    placeholder="add column name" 
+    placeholder="add target column name" 
     v-model="value" 
     class="mb-3"
     ></b-form-tags>
 
   </div>
+  
 
-    <div class="col-sm-4">
-      <b-button 
-      size="md"       
-    variant="primary"
-      @click="uploadFile()">Convert File</b-button>
-  </div>
+    
+ 
  
 </div>
+<div class="row">
+<!-- <div class="col-sm-4">
+  Query Type 
+<b-form-select placeholder="Target type" v-model="selectedquery" :options="querytype">
+    -- Please select an query type --
+</b-form-select>
+  </div> -->
+
+</div>
+
+ <b-button 
+    size="md"       
+    variant="primary"
+      @click="uploadFile()">Convert File</b-button>
+
 <div>
     <br>
   <b-form-textarea
@@ -71,9 +103,8 @@
     </b-button-group>
   </div>
 </div>
-
-  </div>
-
+</div>
+<p></p>
 <!-- </div>
 </div>   -->
 
@@ -93,21 +124,39 @@ export default {
   data()
   {
     return {
-       //  http:'http://localhost/csvadapter-api/index.php',
-       http:'https://api.csvadapter.com/index.php',
+        http:'http://localhost/csvadapter-api/index.php',
+      //  http:'https://api.csvadapter.com/index.php',
         file:'',
         selected:'SQL',
+        selectedquerytype:'INSERT',
         options:['SQL','MySQL','MsSQL','PostgreSQL','SQLite'],
+        state:true,
+        querytype:['INSERT','DELETE','UPDATE'],
         convertedData:'',
         name:'SQL and MySQL',
         tablename:'',
         columns:'',
         value: [],
-        query:''
+        query:'',
+        filename:'Choose or Drop csv file here ...',
+        FormatVisible:false,
+        querytemplate:''
     }
   },
   methods:
   {
+    onFormatChange()
+    {
+      if(this.selectedquery==='INSERT')
+      {
+        this.FormatVisible=false;
+      }
+      else
+      {
+         this.FormatVisible=true;
+      }
+
+    },
     handleSuccess() 
     {
       alert("Successfully Copied Your Query!");
@@ -125,6 +174,7 @@ export default {
         var myfile = $event.target.files[0];        
         //read file contents
         this.file= myfile;    
+        this.filename = 'Filename : '+myfile.name;
       },
       uploadFile:function()
       {   
@@ -161,8 +211,10 @@ export default {
        let formData = new FormData();
        formData.append('file', this.file);
        formData.append('type',this.selected);
+       formData.append('querytype',this.selectedquerytype);
        formData.append('table',this.tablename);
        formData.append('columns',this.columns);
+       formData.append('template',this.querytemplate);
     
     
     this.$http.post(this.http, formData,

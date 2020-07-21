@@ -6,17 +6,19 @@
 <!-- Page Content -->
 <div class="container">
   
-  <h1 class="mb-1">What is Csv adapter ?</h1>
+  <h2 class="mb-1">What is Csv adapter ?</h2>
 
  <p class="mb-1">
-     CSV adapter is a comma delimited conversion tool, it converts csv files to desired format
+     CSV adapter is a very simple comma delimited conversion tool, it converts csv files to desired sql format,i created csvadapter
+     after spending alot of time while converting excel files to SQL queries, it has helped me alot in making the work abit
+     faster and more accurate,i hope it solves your problem too.
 </p>
- <h1 class="mb-1">Supported files</h1>
+ <h2 class="mb-1">Supported files</h2>
 
  <p class="mb-1">
      CSV adapter currently only supports <b>csv</b> file format</p>
 
-<h1 class="mb-1">Using Csv adapter</h1>
+<h2 class="mb-1">How to use csvadapter</h2>
 <ol>
     <li>
     <p class="mb-1">
@@ -24,12 +26,12 @@
       or if you have an existing csv file skip this part. 
       
     </p>
-      Ensure that your file is .csv or you will get an error 
+      Ensure that your file format is <b>.csv</b> or you will get an upload error 
     
     </li>
      <li>
     <p class="mb-1">
-      On csvadapter website click on the drop file area and choose your csv file from your computer files.<br>
+      On csvadapter webapp click on the choose or drop file area and select your csv file from your computer files directory.<br>
      </p>
     </li>
      <li>
